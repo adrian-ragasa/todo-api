@@ -32,7 +32,7 @@ async function addToDo(req, res) {
         todoModel.name = req.body.name;
         todoModel.description = req.body.description;
         todoModel.status = req.body.status;
-        todoModel.date = new Date(Date.now() + (1000*60*60*24*1)).toLocaleDateString();
+        todoModel.date = new Date(Date.now() + (1000*60*60*24*2)).toLocaleDateString();
 
         await todoModel.save();
         res.status(200).send({ todo: todoModel })
